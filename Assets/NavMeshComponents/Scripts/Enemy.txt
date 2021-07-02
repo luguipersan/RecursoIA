@@ -1,0 +1,23 @@
+tree("Root")
+	tree("AI")
+
+tree("AI")
+	fallback
+		tree("Chase")
+		tree("Idle")
+
+tree("Chase")
+	sequence
+		while
+				CanSeePlayer
+				sequence
+					repeat
+						ChasePlayer
+
+tree("Idle")
+	sequence
+		while
+			not
+				CanSeePlayer
+			sequence
+				ReportLastSeen
